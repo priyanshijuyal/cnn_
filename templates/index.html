@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-weight: bold;
+            background: url('https://wallup.net/wp-content/uploads/2018/09/26/229064-anime-nature.jpg') center center/cover no-repeat; 
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with some transparency */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn {
+            color: #333;
+
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 105px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .upload-btn-wrapper .btn:hover {
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .about-bttn-wrapper .bttn:hover{
+               color: #673ab7;
+               cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+<div class="container">
+    <h1>Plant Disease Detection</h1>
+    <div class="upload-btn-wrapper" href="upload/">
+    <input type="file" id="file-input" name="file" accept=".txt, .pdf, .doc, .docx"> 
+    
+    <a class ="btn" href="upload/">Upload a file</a>
+    <a href = 'upload.html'></a>
+    </div>
+
+    
+</div>
+
+</body>
+</html>
+
+
+

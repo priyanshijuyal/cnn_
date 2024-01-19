@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('http://wallpapercave.com/wp/WEVU2YG.jpg'); /* Set your background image here */
+            background-size: cover;
+        }
+
+        #upload-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            font-style: 'times new roman';
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        #upload-label, #upload-button, #image-preview {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #image-preview img {
+            max-width: 100%;
+            max-height: 300px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="upload-container">
+        <label id="upload-label" for="file-input">Choose Image</label>
+        <input type="file" id="file-input" accept="image/*" onchange="handleFileSelect(event)">
+        <div id="image-preview">
+            <img id="selected-image" alt="Selected Image">
+        </div>
+        <button id="upload-button" onclick="uploadImage()">Upload</button>
+    </div>
+
+    <script>
+        function handleFileSelect(event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const selectedImage = document.getElementById('selected-image');
+                    selectedImage.src = e.target.result;
+                    selectedImage.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function uploadImage() {
+            const selectedImage = document.getElementById('selected-image');
+
+            // Simulate image upload (replace this with your actual upload logic)
+            if (selectedImage.src) {
+                console.log('Image uploaded:', selectedImage.src);
+                alert('Image uploaded!');
+            } else {
+                alert('Please select an image first.');
+            }
+        }
+    </script>
+</body>
+</html>
